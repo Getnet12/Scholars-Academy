@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8667513C27BC56D5000F7AA5 /* SheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667513B27BC56D5000F7AA5 /* SheetCell.swift */; };
 		86A5D15D27BC504100A668FC /* SignInSheetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A5D15C27BC504100A668FC /* SignInSheetsVC.swift */; };
 		C5741A4E27A00B3600216441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5741A4D27A00B3600216441 /* AppDelegate.swift */; };
 		C5741A5027A00B3600216441 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5741A4F27A00B3600216441 /* SceneDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8667513B27BC56D5000F7AA5 /* SheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetCell.swift; sourceTree = "<group>"; };
 		86A5D15C27BC504100A668FC /* SignInSheetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSheetsVC.swift; sourceTree = "<group>"; };
 		C5741A4A27A00B3600216441 /* Scholars Academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scholars Academy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5741A4D27A00B3600216441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				C5741A5827A00B3B00216441 /* LaunchScreen.storyboard */,
 				C5741A5B27A00B3B00216441 /* Info.plist */,
 				86A5D15C27BC504100A668FC /* SignInSheetsVC.swift */,
+				8667513B27BC56D5000F7AA5 /* SheetCell.swift */,
 			);
 			path = "Scholars Academy";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8667513C27BC56D5000F7AA5 /* SheetCell.swift in Sources */,
 				86A5D15D27BC504100A668FC /* SignInSheetsVC.swift in Sources */,
 				C5741A5227A00B3600216441 /* ViewController.swift in Sources */,
 				C5741A4E27A00B3600216441 /* AppDelegate.swift in Sources */,
