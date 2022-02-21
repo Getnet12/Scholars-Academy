@@ -11,4 +11,4 @@ The following functionality are completed so far:
 - [ ] Students can sign in and sign out.
 - [ ] Studetns can see the tutoring and mentoring schedule. 
 
-<img src='https://user-images.githubusercontent.com/53867671/154881332-deca771a-009c-47af-841e-b5c7f3bbd195.jpg' title='JSU CSET ' width='' alt='' />
+<img src='https://user-images.githubusercontent.com/53867671/154882057-564fe8d7-e732-409d-bf0b-ff77938ac6ef.png' title='JSU CSET ' width='' alt='' />
