@@ -45,6 +45,9 @@
 		C5741A6527A00B3B00216441 /* Scholars_AcademyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5741A6427A00B3B00216441 /* Scholars_AcademyTests.swift */; };
 		C5741A6F27A00B3B00216441 /* Scholars_AcademyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5741A6E27A00B3B00216441 /* Scholars_AcademyUITests.swift */; };
 		C5741A7127A00B3B00216441 /* Scholars_AcademyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5741A7027A00B3B00216441 /* Scholars_AcademyUITestsLaunchTests.swift */; };
+		C5BA0D3327C30FC200A2193B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA0D3227C30FC100A2193B /* SignUpViewController.swift */; };
+		C5BA0D3527C315BD00A2193B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA0D3427C315BD00A2193B /* SignInViewController.swift */; };
+		C5BA0D3727C31F8800A2193B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA0D3627C31F8700A2193B /* ScheduleViewController.swift */; };
 		C66CCFDDB6F28524F0DEDB17 /* Pods_Scholars_Academy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB600AF774862EA8045197C3 /* Pods_Scholars_Academy.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +84,9 @@
 		C5741A6A27A00B3B00216441 /* Scholars AcademyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Scholars AcademyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5741A6E27A00B3B00216441 /* Scholars_AcademyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scholars_AcademyUITests.swift; sourceTree = "<group>"; };
 		C5741A7027A00B3B00216441 /* Scholars_AcademyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scholars_AcademyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C5BA0D3227C30FC100A2193B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C5BA0D3427C315BD00A2193B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		C5BA0D3627C31F8700A2193B /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		DCAD9DF656A9A2C2976EE275 /* Pods-Scholars Academy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scholars Academy.debug.xcconfig"; path = "Target Support Files/Pods-Scholars Academy/Pods-Scholars Academy.debug.xcconfig"; sourceTree = "<group>"; };
 		EB600AF774862EA8045197C3 /* Pods_Scholars_Academy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scholars_Academy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,7 +181,10 @@
 				C5741A4D27A00B3600216441 /* AppDelegate.swift */,
 				C5741A4F27A00B3600216441 /* SceneDelegate.swift */,
 				C5741A5127A00B3600216441 /* ViewController.swift */,
+				C5BA0D3227C30FC100A2193B /* SignUpViewController.swift */,
 				C5741A5327A00B3600216441 /* Main.storyboard */,
+				C5BA0D3627C31F8700A2193B /* ScheduleViewController.swift */,
+				C5BA0D3427C315BD00A2193B /* SignInViewController.swift */,
 				C5741A5627A00B3B00216441 /* Assets.xcassets */,
 				C5741A5827A00B3B00216441 /* LaunchScreen.storyboard */,
 				C5741A5B27A00B3B00216441 /* Info.plist */,
@@ -421,7 +430,10 @@
 			files = (
 				C5741A5227A00B3600216441 /* ViewController.swift in Sources */,
 				C5741A4E27A00B3600216441 /* AppDelegate.swift in Sources */,
+				C5BA0D3327C30FC200A2193B /* SignUpViewController.swift in Sources */,
+				C5BA0D3727C31F8800A2193B /* ScheduleViewController.swift in Sources */,
 				C5741A5027A00B3600216441 /* SceneDelegate.swift in Sources */,
+				C5BA0D3527C315BD00A2193B /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
