@@ -13,6 +13,7 @@
 		86C95FC927C5EA3B00668701 /* StudentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C95FC827C5EA3B00668701 /* StudentListVC.swift */; };
 		86C95FCB27C5F38500668701 /* FirestoreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C95FCA27C5F38400668701 /* FirestoreKey.swift */; };
 		86C95FCD27C5F57E00668701 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C95FCC27C5F57E00668701 /* StudentCell.swift */; };
+		86C95FCF27C6DBFF00668701 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C95FCE27C6DBFE00668701 /* Person.swift */; };
 		C504013327B1D921002EAE25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C504013227B1D921002EAE25 /* GoogleService-Info.plist */; };
 		C548979127BAB6DC00B7088A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C548979027BAB6DC00B7088A /* FirebaseAnalytics */; };
 		C548979327BAB6DC00B7088A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = C548979227BAB6DC00B7088A /* FirebaseAnalyticsSwift-Beta */; };
@@ -82,6 +83,7 @@
 		86C95FC827C5EA3B00668701 /* StudentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListVC.swift; sourceTree = "<group>"; };
 		86C95FCA27C5F38400668701 /* FirestoreKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreKey.swift; sourceTree = "<group>"; };
 		86C95FCC27C5F57E00668701 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
+		86C95FCE27C6DBFE00668701 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C504013227B1D921002EAE25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C5741A4A27A00B3600216441 /* Scholars Academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scholars Academy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5741A4D27A00B3600216441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				C504013227B1D921002EAE25 /* GoogleService-Info.plist */,
 				86C95FC327C4054900668701 /* SignInSheet */,
 				86C95FCA27C5F38400668701 /* FirestoreKey.swift */,
+				86C95FCE27C6DBFE00668701 /* Person.swift */,
 			);
 			path = "Scholars Academy";
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				86C95FC527C408CE00668701 /* SheetCell.swift in Sources */,
 				C5BA0D3727C31F8800A2193B /* ScheduleViewController.swift in Sources */,
 				C5741A5027A00B3600216441 /* SceneDelegate.swift in Sources */,
+				86C95FCF27C6DBFF00668701 /* Person.swift in Sources */,
 				C5BA0D3527C315BD00A2193B /* SignInViewController.swift in Sources */,
 				86C95FC027C404F400668701 /* SheetsVC.swift in Sources */,
 			);
