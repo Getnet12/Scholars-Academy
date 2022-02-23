@@ -36,7 +36,9 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            <#code#>
+        let cell = studentsTableView.dequeueReusableCell(withIdentifier: "StudentCell") as! StudentCell
+        
+        return cell
     }
     /*
     // MARK: - Navigation
