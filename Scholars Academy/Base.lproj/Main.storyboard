@@ -228,7 +228,7 @@
                                         <connections>
                                             <outlet property="sheetTitle" destination="tdI-IX-zed" id="6Hj-n5-gaS"/>
                                             <outlet property="view" destination="sjV-Xd-gJ2" id="hGL-kL-xed"/>
-                                            <segue destination="rpG-qv-yQc" kind="presentation" identifier="clock_in_Segue" id="EJ6-Hy-Ijg"/>
+                                            <segue destination="YDg-bU-YYZ" kind="presentation" identifier="clock_in_Segue" id="EJ6-Hy-Ijg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -252,20 +252,23 @@
             </objects>
             <point key="canvasLocation" x="2724.6376811594205" y="961.60714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Clock In And OutVC-->
         <scene sceneID="dRI-8g-l17">
             <objects>
-                <viewController id="rpG-qv-yQc" sceneMemberID="viewController">
+                <viewController id="rpG-qv-yQc" customClass="ClockInAndOutVC" customModule="Scholars_Academy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R67-VB-MeN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-Ri-ZhZ">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-Ri-ZhZ">
                                 <rect key="frame" x="136" y="425" width="142" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Clock Out"/>
+                                <connections>
+                                    <action selector="onClockOut:" destination="rpG-qv-yQc" eventType="touchUpInside" id="Bio-W9-RlQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please click the button below to clock in or clock out." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcE-aD-dTW">
                                 <rect key="frame" x="72" y="44" width="270" height="71"/>
@@ -279,15 +282,96 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Clock In"/>
+                                <connections>
+                                    <action selector="onClockIn:" destination="rpG-qv-yQc" eventType="touchUpInside" id="IPF-sk-lDS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Upx-XQ-6iW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Kvd-CM-xl0">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="zSx-kU-ar1">
+                            <connections>
+                                <action selector="onTapDone:" destination="rpG-qv-yQc" id="6UQ-Bf-P6h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="clockInButton" destination="M8J-Hl-UCm" id="cus-m4-o8X"/>
+                        <outlet property="clockOutButton" destination="nJ3-Ri-ZhZ" id="PfW-yV-G5a"/>
+                        <segue destination="ilz-C6-Ekt" kind="show" identifier="CicoSegue" id="Mz3-3j-ASV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di6-ia-Pyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3937.68115942029" y="961.60714285714278"/>
+            <point key="canvasLocation" x="4576.811594202899" y="961.60714285714278"/>
+        </scene>
+        <!--Student ListVC-->
+        <scene sceneID="viD-as-GjS">
+            <objects>
+                <viewController id="ilz-C6-Ekt" customClass="StudentListVC" customModule="Scholars_Academy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWf-LR-DYw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fR9-Dl-twl">
+                                <rect key="frame" x="20" y="76" width="374" height="726"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="uvX-a6-ssc" customClass="StudentCell" customModule="Scholars_Academy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uvX-a6-ssc" id="MPH-hi-aO7">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-JB-tTV">
+                                                    <rect key="frame" x="20" y="31" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb8-22-Nx0">
+                                                    <rect key="frame" x="287" y="26" width="67" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cicoButton" destination="hb8-22-Nx0" id="pbI-DA-odh"/>
+                                            <outlet property="studentId" destination="hNx-JB-tTV" id="6qc-4l-l7V"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ove-93-eM9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ove-93-eM9" firstAttribute="trailing" secondItem="fR9-Dl-twl" secondAttribute="trailing" constant="20" id="a2u-2N-0Vo"/>
+                            <constraint firstItem="fR9-Dl-twl" firstAttribute="leading" secondItem="ove-93-eM9" secondAttribute="leading" constant="20" id="aTY-yM-1O8"/>
+                            <constraint firstItem="fR9-Dl-twl" firstAttribute="top" secondItem="ove-93-eM9" secondAttribute="top" constant="20" id="eir-gX-afV"/>
+                            <constraint firstItem="ove-93-eM9" firstAttribute="bottom" secondItem="fR9-Dl-twl" secondAttribute="bottom" constant="40" id="k41-7p-ow3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sej-xb-EFd">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="bqA-mQ-9De">
+                            <connections>
+                                <action selector="onTapDone:" destination="ilz-C6-Ekt" id="f9W-dA-ASz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="studentsTableView" destination="fR9-Dl-twl" id="aTY-7d-U10"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4O-N4-VDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5453.6231884057979" y="961.60714285714278"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="rnI-7Q-0sE">
@@ -428,6 +512,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkg-9k-Iaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-20.289855072463769" y="205.58035714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kcN-Ew-4KK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YDg-bU-YYZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hdu-Jd-zs2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rpG-qv-yQc" kind="relationship" relationship="rootViewController" id="73T-Uf-zY9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9o-bI-rsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3666.666666666667" y="961.60714285714278"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
