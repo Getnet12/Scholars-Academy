@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import FirebaseFirestore
+
 
 
 class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var isClockingOut = false
-    var studentsList = [String:Any]()
+    var studentsList = [[String:Any]]()
+    
+    var db: Firestore!
     
     @IBOutlet weak var studentsTableView: UITableView!
     
@@ -19,11 +23,33 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if(isClockingOut){
-            print("isClockingOut")
-        }else{
-            print("isClockingIn")
-        }
+        
+        studentsTableView.delegate = self
+        studentsTableView.dataSource = self
+        // initialized firestore settings
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        
+        db.collection(myKey.studentsCollection).whereField(myKey.isStudent, isEqualTo: true).getDocuments() { querySnap, err in
+                    if let err = err{
+                        print("Error getting documents: \(err)")
+                    }else{
+                        let fireCollection = querySnap!.documents as NSArray
+                        for doc in fireCollection{
+                            if let element = (doc as AnyObject).data(){
+                                self.studentsList.append(element)
+                                //print("here \(element)")
+                                self.studentsTableView.reloadData()
+                            }
+                            
+                        }
+                        //print("here \((fireCollection[1] as AnyObject).data())")
+                    }
+                }
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     
@@ -37,7 +63,16 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = studentsTableView.dequeueReusableCell(withIdentifier: "StudentCell") as! StudentCell
-        
+        let fName = studentsList[indexPath.row][myKey.firstName] as! String
+        let lName = studentsList[indexPath.row][myKey.lastName] as! String
+        let studentName = fName + " "+lName
+//        if(self.isClockingOut){
+//            cell.cicoButton.setTitle("Clock Out", for: .normal)
+//        }else{
+//            cell.cicoButton.setTitle("Clock In", for: .normal)
+//        }
+        self.isClockingOut == true ? cell.cicoButton.setTitle("Clock Out", for: .normal):cell.cicoButton.setTitle("Clock In", for: .normal)
+        cell.studentId.text = studentName
         return cell
     }
     /*

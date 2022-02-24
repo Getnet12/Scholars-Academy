@@ -319,27 +319,31 @@
                                 <rect key="frame" x="20" y="76" width="374" height="726"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="uvX-a6-ssc" customClass="StudentCell" customModule="Scholars_Academy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="84" id="uvX-a6-ssc" customClass="StudentCell" customModule="Scholars_Academy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uvX-a6-ssc" id="MPH-hi-aO7">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-JB-tTV">
-                                                    <rect key="frame" x="20" y="31" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-JB-tTV">
+                                                    <rect key="frame" x="20" y="31.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb8-22-Nx0">
-                                                    <rect key="frame" x="287" y="26" width="67" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb8-22-Nx0">
+                                                    <rect key="frame" x="287" y="26.5" width="67" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hb8-22-Nx0" firstAttribute="trailing" secondItem="MPH-hi-aO7" secondAttribute="trailingMargin" id="bp4-T2-KUZ"/>
+                                                <constraint firstItem="hNx-JB-tTV" firstAttribute="centerY" secondItem="MPH-hi-aO7" secondAttribute="centerY" id="en9-3X-6H1"/>
+                                                <constraint firstItem="hb8-22-Nx0" firstAttribute="centerY" secondItem="MPH-hi-aO7" secondAttribute="centerY" id="q3U-1G-H0y"/>
+                                                <constraint firstItem="hNx-JB-tTV" firstAttribute="leading" secondItem="MPH-hi-aO7" secondAttribute="leadingMargin" id="rML-1U-ZK3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cicoButton" destination="hb8-22-Nx0" id="pbI-DA-odh"/>
@@ -366,7 +370,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="studentsTableView" destination="fR9-Dl-twl" id="aTY-7d-U10"/>
+                        <outlet property="studentsTableView" destination="fR9-Dl-twl" id="bfv-cf-XhJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4O-N4-VDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
