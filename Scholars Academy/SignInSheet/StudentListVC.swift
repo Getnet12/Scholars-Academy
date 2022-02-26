@@ -14,6 +14,7 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     var isClockingOut = false
     var studentsList = [[String:Any]]()
+    var selectedSheet: String?
     
     var db: Firestore!
     
@@ -23,7 +24,6 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         studentsTableView.delegate = self
         studentsTableView.dataSource = self
         // initialized firestore settings
@@ -31,7 +31,7 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
-        db.collection(myKey.studentsCollection).whereField(myKey.isStudent, isEqualTo: true).getDocuments() { querySnap, err in
+        db.collection(myKey.collectionID).whereField(myKey.isStudent, isEqualTo: true).whereField("isClockedIn", isEqualTo: !(self.isClockingOut)).getDocuments() { querySnap, err in
                     if let err = err{
                         print("Error getting documents: \(err)")
                     }else{
@@ -75,6 +75,29 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         cell.studentId.text = studentName
         return cell
     }
+    func toggleCico(ofFBDocument docID: String, into boolValue: Bool){
+        var personRef = db.collection(myKey.collectionID).document(docID)
+        
+        .updateData([
+            myKey.isClockedIn: boolValue
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellContent = studentsList[indexPath.row]
+        print("here is cell Name\(cellContent)")
+        let isCurrentCiCoState = cellContent[myKey.isClockedIn] as! Bool
+        let docID = cellContent[myKey.documentID] as! String
+        
+        toggleCico(ofFBDocument: docID, into: !isCurrentCiCoState)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

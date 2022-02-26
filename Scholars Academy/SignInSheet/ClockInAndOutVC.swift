@@ -9,12 +9,14 @@ import UIKit
 
 class ClockInAndOutVC: UIViewController {
 
+    var selectedSheet: String?
     @IBOutlet weak var clockInButton: UIButton!
     @IBOutlet weak var clockOutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     @IBAction func onClockIn(_ sender: Any) {
         performSegue(withIdentifier: "CicoSegue", sender: self.clockInButton)
@@ -41,6 +43,7 @@ class ClockInAndOutVC: UIViewController {
         }else{
             studentListVC.isClockingOut = true
         }
+        studentListVC.selectedSheet = self.selectedSheet
         
     }
     

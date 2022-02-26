@@ -8,8 +8,10 @@
 import Foundation
 
 class FirestoreKey{
-    let studentsCollection = "StudentList"
-    //
+    let collectionID = "StudentList"
+    var documentID = "documentID"
+    
+    // Keys to access person Object
     var firstName = "firstName"
     var lastName = "lastName"
     var email = "email"
@@ -18,4 +20,6 @@ class FirestoreKey{
     var isAdmin = "isAdmin" // set to true if the user has administrative priviledges
     var isStudent = "isStudent"
     var isMentor = "isMentor"
+    var isClockedIn = "isClockedIn"
+    
 }
