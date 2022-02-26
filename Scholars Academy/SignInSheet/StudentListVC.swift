@@ -75,16 +75,19 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         cell.studentId.text = studentName
         return cell
     }
-    func toggleCico(ofFBDocument docID: String, into boolValue: Bool){
-        var personRef = db.collection(myKey.collectionID).document(docID)
+    func toggleCico(ofFBDocument docID: String, into boolValue: Bool, andRemove studentToRemove: Int){
+        let personRef = db.collection(myKey.collectionID).document(docID)
         
-        .updateData([
+        personRef.updateData([
             myKey.isClockedIn: boolValue
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
             } else {
                 print("Document successfully updated")
+                let _ = self.studentsList.remove(at: studentToRemove)
+                self.studentsTableView.reloadData()
+                
             }
         }
     }
@@ -94,7 +97,7 @@ class StudentListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         let isCurrentCiCoState = cellContent[myKey.isClockedIn] as! Bool
         let docID = cellContent[myKey.documentID] as! String
         
-        toggleCico(ofFBDocument: docID, into: !isCurrentCiCoState)
+        toggleCico(ofFBDocument: docID, into: !isCurrentCiCoState, andRemove: indexPath.row)
         
     }
     
